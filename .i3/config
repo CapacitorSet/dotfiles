@@ -2,7 +2,10 @@
 bindsym Mod1+l exec "gnome-screensaver-command -l"
 bindsym XF86MonBrightnessDown exec "brightness - 500"
 bindsym XF86MonBrightnessUp exec "brightness + 500"
-### END CUSTOM
+bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
+bindsym XF86AudioMute exec "amixer -q set Master toggle"
+bindsym XF86VolumeUp exec "amixer -D pulse sset Master 5%+"
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
