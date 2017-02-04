@@ -1,0 +1,36 @@
+// based on a keyboard map from an 'xkb/symbols/it' file
+// 17 May 2003 Modified by Sebastiano Vigna (vigna@dsi.unimi.it)
+// 04 Feb 2017 Modified by Capacitor Set
+
+default  partial alphanumeric_keys
+xkb_symbols "basic" {
+
+    include "it(basic)"
+
+    name[Group1]="XY";
+
+    // Do not use Shift for special characters
+    key <AE01>  { [      exclam, 1,   onesuperior,   exclamdown ] };
+    key <AE02>  { [    quotedbl, 2,   twosuperior, dead_doubleacute ] };
+    key <AE03>  { [    sterling, 3, threesuperior,   dead_tilde ] };
+    key <AE04>  { [      dollar, 4,    onequarter,    oneeighth ] };
+    key <AE05>  { [     percent, 5,       onehalf, threeeighths ] };
+    key <AE06>  { [ asciicircum, 6, threequarters,  fiveeighths ] };
+    key <AE07>  { [       slash, 7,     braceleft, seveneighths ] };
+    key <AE08>  { [   parenleft, 8,   bracketleft,    trademark ] };
+    key <AE09>  { [  parenright, 9,  bracketright,    plusminus ] };
+    key <AE10>  { [       equal, 0,    braceright,  dead_ogonek ] };
+
+    // Replace unused AltGr keys with German letters:
+    // AltGr+(a,o,u) => ä, ö, ü
+    // AltGr+s => ß (already in it-basic)
+    key <AC01>  { [           a, A,    adiaeresis,   Adiaeresis ] };
+    key <AD07>  { [           u, U,    udiaeresis,   Udiaeresis ] };
+    key <AD09>  { [           o, O,    odiaeresis,   Odiaeresis ] };
+    key <AB03>  { [           c, C,      ccedilla,     Ccedilla ] };
+
+    // Invert < and >: the default key is ">", for greentexting and ES6 fat arrows
+    key <LSGT>  { [ greater, less, guillemotright, guillemotleft ] };
+
+    include "level3(ralt_switch)"
+};
