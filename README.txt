@@ -9,3 +9,4 @@ My dotfiles.
 ./README.md: this file
 ./usr/share/X11/xkb/rules/evdev.xml: the list of kbd layouts
 ./usr/share/X11/xkb/symbols/xy: custom kbd layout based on the default Italian kbd
+./.oh-my-zsh/oh-my-zsh.sh: optimized zsh initialization script
