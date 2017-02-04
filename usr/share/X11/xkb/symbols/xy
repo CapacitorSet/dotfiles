@@ -2,6 +2,8 @@
 // 17 May 2003 Modified by Sebastiano Vigna (vigna@dsi.unimi.it)
 // 04 Feb 2017 Modified by Capacitor Set
 
+// Note to self: run `setxkbmap xy`
+
 default  partial alphanumeric_keys
 xkb_symbols "basic" {
 
@@ -12,7 +14,8 @@ xkb_symbols "basic" {
     // Do not use Shift for special characters
     key <AE01>  { [      exclam, 1,   onesuperior,   exclamdown ] };
     key <AE02>  { [    quotedbl, 2,   twosuperior, dead_doubleacute ] };
-    key <AE03>  { [    sterling, 3, threesuperior,   dead_tilde ] };
+    // 3 gives tilde (~), not pound (£)
+    key <AE03>  { [  asciitilde, 3, threesuperior,   dead_tilde ] };
     key <AE04>  { [      dollar, 4,    onequarter,    oneeighth ] };
     key <AE05>  { [     percent, 5,       onehalf, threeeighths ] };
     key <AE06>  { [ asciicircum, 6, threequarters,  fiveeighths ] };
