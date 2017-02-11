@@ -18,7 +18,7 @@ xkb_symbols "basic" {
     key <AE03>  { [  asciitilde, 3, threesuperior,   dead_tilde ] };
     key <AE04>  { [      dollar, 4,    onequarter,    oneeighth ] };
     key <AE05>  { [     percent, 5,       onehalf, threeeighths ] };
-    key <AE06>  { [ asciicircum, 6, threequarters,  fiveeighths ] };
+    key <AE06>  { [   ampersand, 6, threequarters,  fiveeighths ] };
     key <AE07>  { [       slash, 7,     braceleft, seveneighths ] };
     key <AE08>  { [   parenleft, 8,   bracketleft,    trademark ] };
     key <AE09>  { [  parenright, 9,  bracketright,    plusminus ] };
