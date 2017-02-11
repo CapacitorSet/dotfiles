@@ -147,10 +147,10 @@ prompt_dir() {
 get_status() {
   local symbols
   symbols=()
-  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘ [%?]"
   [[ $RETVAL -eq 0 ]] && symbols+="%{%F{green}%}✔"
   [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
-  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
 
   [[ -n "$symbols" ]] && echo -n " $symbols "
 }
@@ -167,13 +167,6 @@ left_prompt() {
   prompt_end
 }
 
-prompt_sudo() {
-  local symbols
-  symbols=()
-  [[ $UID -eq 0 ]] && symbols+=" ⚡"
-  echo "$symbols"
-}
-
 right_prompt() {
   RETVAL=$?
   get_user
@@ -182,4 +175,4 @@ right_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(left_prompt) '
-RPROMPT='$(right_prompt)'
+RPROMPT='%B$(right_prompt)%b'
