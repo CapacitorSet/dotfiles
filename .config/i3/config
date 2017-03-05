@@ -51,6 +51,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+#lock
+bindsym $mod+l exec i3lock
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
