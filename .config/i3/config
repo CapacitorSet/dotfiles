@@ -157,6 +157,10 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # press twice to go to prev workspace
 workspace_auto_back_and_forth yes
 
-# Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+# Volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+
+# Brightness
+bindsym XF86MonBrightnessUp exec brightness + 100
+bindsym XF86MonBrightnessDown exec brightness - 100
