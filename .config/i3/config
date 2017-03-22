@@ -5,6 +5,8 @@
 # Open Firefox and Telegram on startup
 exec firefox
 exec telegram
+# Open the network manager applet
+exec nm-applet
 
 set $mod Mod4
 
