@@ -88,16 +88,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+exclam workspace 1
-bindsym $mod+quotedbl workspace 2
-bindsym $mod+asciitilde workspace 3
-bindsym $mod+dollar workspace 4
-bindsym $mod+percent workspace 5
-bindsym $mod+ampersand workspace 6
-bindsym $mod+slash workspace 7
-bindsym $mod+parenleft workspace 8
-bindsym $mod+parenright workspace 9
-bindsym $mod+equal workspace 10
+bindsym $mod+exclam workspace number 1
+bindsym $mod+quotedbl workspace number 2
+bindsym $mod+asciitilde workspace number 3
+bindsym $mod+dollar workspace number 4
+bindsym $mod+percent workspace number 5
+bindsym $mod+ampersand workspace number 6
+bindsym $mod+slash workspace number 7
+bindsym $mod+parenleft workspace number 8
+bindsym $mod+parenright workspace number 9
+bindsym $mod+equal workspace number 10
 
 # move focused container to workspace
 bindsym $mod+Shift+exclam move container to workspace 1
