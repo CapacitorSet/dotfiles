@@ -5,6 +5,7 @@ My dotfiles.
 ./.oh-my-zsh/themes/custom.zsh-theme: zsh theme based on Agnoster
 ./.zshrc: zsh config (plugins + custom theme)
 ./bin/brightness: controls the brightness from the command line
+./nightmode.tdesktop-palette: Telegram Desktop night mode theme
 ./etc/i3status.conf: i3status config
 ./README.md: this file
 ./usr/share/X11/xkb/rules/evdev.xml: the list of kbd layouts
