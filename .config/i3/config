@@ -9,6 +9,12 @@ exec telegram
 exec nm-applet
 # Set custom keyboard layout
 exec setxkbmap xy
+# Hide the mouse
+exec --no-startup-id unclutter
+# Set wallpaper
+exec feh --bg-fill ~/dotfiles/wallpaper.jpg
+# Add transparency and fade-ins
+exec xcompmgr -f -n
 
 set $mod Mod4
 
