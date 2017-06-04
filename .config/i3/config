@@ -14,7 +14,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+font pango:Icons 12, Noto Sans 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -128,6 +128,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+r mode "resize"
 
+gaps inner 5px
+gaps outer 5px
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -149,9 +152,12 @@ bar {
         status_command i3status
 }
 
+# Do not show borders
+new_window pixel 0
+
 # default colors, but focused has yellow bg+borders
 # class                 border  backgr. text    indicator child_border
-client.focused          #f7db6e #f7db6e #000000 #2e9ef4   #f7db6e
+client.focused          #546E7A #546E7A #ffffff #2e9ef4   #546E7A
 client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 client.urgent           #e74c3c #e74c3c #ffffff #900000   #e74c3c
