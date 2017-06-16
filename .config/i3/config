@@ -137,8 +137,8 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 bindsym $mod+r mode "resize"
 
-gaps inner 5px
-gaps outer 5px
+#gaps inner 5px
+#gaps outer 5px
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -173,12 +173,12 @@ client.urgent           #e74c3c #e74c3c #ffffff #900000   #e74c3c
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # press twice to go to prev workspace
-workspace_auto_back_and_forth yes
+# workspace_auto_back_and_forth yes
 
 # Volume
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 
 # Brightness
-bindsym XF86MonBrightnessUp exec brightness + 100
-bindsym XF86MonBrightnessDown exec brightness - 100
+bindsym F10 exec brightness + 10
+bindsym F9 exec brightness - 10
