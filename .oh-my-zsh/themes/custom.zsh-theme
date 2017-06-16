@@ -79,17 +79,8 @@ prompt_end() {
 # Each component will draw itself, and hide itself if no information needs to be shown
 
 get_user() {
-  if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-    echo -n "$USER" # @%m
-  fi	
+  echo -n $USER@%m
 }
-
-# Context: user@hostname (who am I and where am I)
-# prompt_context() {
-#   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
-#     prompt_segment black default $USER # @%m
-#   fi
-# }
 
 # Git: branch/detached head, dirty status
 prompt_git() {
@@ -111,22 +102,14 @@ prompt_git() {
       prompt_segment green black
     fi
 
-    if [[ -e "${repo_path}/BISECT_LOG" ]]; then
-      mode=" <B>"
-    elif [[ -e "${repo_path}/MERGE_HEAD" ]]; then
-      mode=" >M<"
-    elif [[ -e "${repo_path}/rebase" || -e "${repo_path}/rebase-apply" || -e "${repo_path}/rebase-merge" || -e "${repo_path}/../.dotest" ]]; then
-      mode=" >R>"
-    fi
-
     setopt promptsubst
     autoload -Uz vcs_info
 
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' get-revision true
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr '[todo: commit]'
-    zstyle ':vcs_info:*' unstagedstr '[todo: add]'
+    zstyle ':vcs_info:*' stagedstr '[commit]'
+    zstyle ':vcs_info:*' unstagedstr '[add]'
     zstyle ':vcs_info:*' formats ' %u%c'
     zstyle ':vcs_info:*' actionformats ' %u%c'
     vcs_info
@@ -155,10 +138,6 @@ get_status() {
   [[ -n "$symbols" ]] && echo -n " $symbols "
 }
 
-get_time () {
-	echo -n " $(date +%T)"
-}
-
 ## Main prompt
 left_prompt() {
   RETVAL=$?
@@ -170,7 +149,6 @@ left_prompt() {
 right_prompt() {
   RETVAL=$?
   get_user
-  get_time
   get_status
 }
 
