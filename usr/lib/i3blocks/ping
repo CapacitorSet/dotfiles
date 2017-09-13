@@ -1,0 +1,2 @@
+#!/bin/sh
+echo $(fping 8.8.8.8 -e | cut -d ' ' -f 4 | cut -b 2-) ms

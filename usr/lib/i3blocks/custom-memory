@@ -1,0 +1,2 @@
+#!/bin/sh
+grep Active: /proc/meminfo | awk '{printf("%.2f GB\n", $2/1024/1024)}'

@@ -1,0 +1,6 @@
+#!/bin/sh
+# Works on my machine (tm)
+# Output of "pactl list sinks | grep Volume":
+# Volume: front-left: 9171 /  14% / -51.24 dB,   front-right: 9171 /  14% / -51.24 dB
+# Base Volume: etc etc
+pactl list sinks | grep Volume | head --lines=1 | awk '{print $5}'

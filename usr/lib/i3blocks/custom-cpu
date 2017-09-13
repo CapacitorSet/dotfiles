@@ -1,0 +1,3 @@
+#!/bin/sh
+set -- `mpstat | tail --lines=1`
+echo $4%
