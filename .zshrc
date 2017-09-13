@@ -1,12 +1,13 @@
 export TZ=:/etc/localtime
 export GOROOT=/usr/local/go
 export PATH=$PATH:$GOROOT/bin
+export TERMINAL=qterminal
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/jules/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 ZSH_THEME="custom"
 
