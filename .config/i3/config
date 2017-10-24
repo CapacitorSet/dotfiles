@@ -3,18 +3,18 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # Open Firefox and Telegram on startup
-exec firefox
+exec firefox-nightly
 exec telegram
 # Open the network manager applet
-exec nm-applet
+# exec nm-applet
 # Set custom keyboard layout
 exec setxkbmap xy
 # Hide the mouse
 exec --no-startup-id unclutter
 # Set wallpaper
-exec feh --bg-fill ~/dotfiles/wallpaper.jpg
+exec feh --bg-fill ~/dotfiles/archwp.png
 # Add transparency and fade-ins
-exec xcompmgr -f -n
+# exec xcompmgr -f -n
 
 set $mod Mod4
 
@@ -37,7 +37,7 @@ font pango:Fira Sans 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec qterminal
+bindsym $mod+Return exec lxterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -168,19 +168,24 @@ new_window pixel 0
 
 # default colors, but focused has yellow bg+borders
 # class                 border  backgr. text    indicator child_border
-client.focused          #546E7A #546E7A #ffffff #2e9ef4   #546E7A
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #e74c3c #e74c3c #ffffff #900000   #e74c3c
+client.focused          #FFEA00 #FFEA00 #000000 #2e9ef4   #FFEA00
+client.focused_inactive #CCBB00 #CCBB00 #000000 #484e50   #CCBB00
+client.unfocused        #000000 #000000 #FFFFFF #292d2e   #000000
+client.urgent           #F44336 #F44336 #ffffff #900000   #F44336
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # press twice to go to prev workspace
 # workspace_auto_back_and_forth yes
 
 # Volume
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +3%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -3%
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +3%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -3%
+bindsym XF86AudioPlay exec --no-startup-id mpc toggle
+bindsym XF86AudioStop exec --no-startup-id mpc stop
+bindsym XF86AudioPrev exec --no-startup-id mpc prev
+bindsym XF86AudioNext exec --no-startup-id mpc next
+
 
 # Brightness
-bindsym F10 exec brightness + 5
-bindsym F9 exec brightness - 5
+bindsym XF86MonBrightnessUp exec brightness + 5
+bindsym XF86MonBrightnessDown exec brightness - 5

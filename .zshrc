@@ -1,7 +1,8 @@
 export TZ=:/etc/localtime
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
-export TERMINAL=qterminal
+export GOROOT=/usr/lib/go
+export PATH=$PATH:$GOROOT/bin:~/software/node-v8.5.0-linux-x64/bin:~/.gem/ruby/2.4.0/bin
+export TERMINAL=lxterminal
+export EDITOR=nano
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -53,7 +54,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump command-not-found git npm sudo web-search )
+plugins=(autojump command-not-found npm sudo)
 
 source $ZSH/oh-my-zsh.sh
 
