@@ -45,6 +45,8 @@ bindsym $mod+Shift+q kill
 
 # start rofi (replaces dmenu)
 bindsym $mod+d exec "rofi -show run -font 'Fira Sans 13'"
+# start xfce appfinder
+bindsym $mod+a exec xfce4-appfinder
 # start rofi window switcher
 bindsym $mod+w exec "rofi -show window -font 'Fira Sans 13'"
 
