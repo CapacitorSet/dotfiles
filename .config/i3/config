@@ -2,9 +2,10 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# Open Firefox and Telegram on startup
+# Open Firefox, Telegram, Thunderbird on startup
 exec firefox-nightly
 exec telegram
+exec thunderbird
 # Open the network manager applet
 # exec nm-applet
 # Set custom keyboard layout
