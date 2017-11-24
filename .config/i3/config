@@ -2,21 +2,6 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# Open Firefox, Telegram, Thunderbird on startup
-exec firefox-nightly
-exec telegram
-exec thunderbird
-# Open the network manager applet
-# exec nm-applet
-# Set custom keyboard layout
-exec setxkbmap xy
-# Hide the mouse
-exec --no-startup-id unclutter
-# Set wallpaper
-exec feh --bg-fill ~/dotfiles/archwp.png
-# Add transparency and fade-ins
-# exec xcompmgr -f -n
-
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
