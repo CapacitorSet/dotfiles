@@ -16,9 +16,7 @@ setxkbmap xy
 # Hide the mouse
 unclutter &
 # Set wallpaper
-feh --bg-fill ~/dotfiles/archwp.png
-# Add transparency and fade-ins
-# exec xcompmgr -f -n
+feh --bg-fill ~/dotfiles/wallpaper-1366x768.jpg
 
 dunst -conf ~/dotfiles/dunstrc &
 
