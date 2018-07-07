@@ -1,7 +1,8 @@
 export TZ=:/etc/localtime
 export GOROOT=/usr/lib/go
-export PATH=$PATH:$GOROOT/bin:~/software/node-v8.5.0-linux-x64/bin:~/.gem/ruby/2.4.0/bin
-export TERMINAL=lxterminal
+export GOPATH=~/software/gopath
+export PATH=$PATH:$GOROOT/bin:~/.gem/ruby/2.5.0/bin
+export TERMINAL=qterminal
 export EDITOR=nano
 
 # If you come from bash you might have to change your $PATH.
