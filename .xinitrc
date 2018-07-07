@@ -20,6 +20,8 @@ feh --bg-fill ~/dotfiles/archwp.png
 # Add transparency and fade-ins
 # exec xcompmgr -f -n
 
+dunst -conf ~/dotfiles/dunstrc &
+
 setxkbmap it
 numlockx on
 exec i3
