@@ -1,5 +1,4 @@
 # i3 config file (v4)
-#
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
@@ -23,7 +22,7 @@ font pango:Fira Sans 13
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal
+bindsym $mod+Return exec qterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -52,7 +51,7 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 #lock
-bindsym $mod+l exec xsecurelock
+bindsym $mod+l exec betterlockscreen --lock
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -147,7 +146,7 @@ mode "resize" {
 # finds out, if available)
 bar {
 #        status_command i3status
-        font pango:Fira Sans 13
+        font pango:Fira Mono 12
         status_command i3blocks
 }
 
