@@ -17,7 +17,7 @@ setxkbmap xy
 unclutter &
 # Set wallpaper
 feh --bg-fill ~/dotfiles/wallpaper-1366x768.jpg
-
+# Dunst (notification manager)
 dunst -conf ~/dotfiles/dunstrc &
 
 setxkbmap it
