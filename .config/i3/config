@@ -25,7 +25,7 @@ font pango:Fira Mono 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec ~/software/xst/xst
+bindsym $mod+Return exec qterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -54,7 +54,7 @@ bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
 #lock
-bindsym $mod+l exec betterlockscreen --lock
+bindsym $mod+l exec ~/dotfiles/scr-lock
 
 # split in horizontal orientation
 bindsym $mod+h split h

@@ -9,16 +9,17 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # Startup stuff
 firefox-nightly &
-telegram &
+telegram-desktop &
 thunderbird &
 # Set custom keyboard layout
 setxkbmap xy
 # Hide the mouse
 unclutter &
 # Set wallpaper
-feh --bg-fill ~/dotfiles/wallpaper-1366x768.jpg
+# feh --bg-fill ~/dotfiles/wallpaper-1366x768.jpg
+feh --bg-fill ~/dotfiles/Torino.jpg
 # Dunst (notification manager)
-dunst -conf ~/dotfiles/dunstrc &
+# dunst -conf ~/dotfiles/dunstrc &
 
 setxkbmap it
 numlockx on

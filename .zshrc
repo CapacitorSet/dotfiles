@@ -1,9 +1,35 @@
 export TZ=:/etc/localtime
 export GOROOT=/usr/lib/go
 export GOPATH=~/software/gopath
-export PATH=$PATH:$GOROOT/bin:~/.gem/ruby/2.5.0/bin
 export TERMINAL=qterminal
 export EDITOR=nano
+
+alias dc='docker-compose'
+alias dx='docker exec'
+alias lh='ls -lh'
+alias cpwd='pwd | clipcopy'
+alias zsrc='source ~/.zshrc'
+
+alias -s txt=cat
+alias -s md=cat
+alias -s c=subl
+alias -s h=subl
+alias -s cpp=subl
+alias -s hpp=subl
+alias -s js=code
+alias -s ts=code
+alias -s css=code
+alias -s html=firefox-nightly
+alias -s git='git clone'
+
+alias S='trizen -S'
+alias Syu='trizen -Syu'
+alias Rns='trizen -Rns'
+
+hash -d nginx=/etc/nginx/sites-enabled/
+hash -d logs=/var/log/
+
+eval $(ssh-agent -s) | grep -v 'Agent pid'
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -51,11 +77,12 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+export FZF_BASE=/usr/share/fzf
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(autojump command-not-found npm sudo)
+plugins=(copybuffer colored-man-pages fzf command-not-found npm sudo)
 
 source $ZSH/oh-my-zsh.sh
 
