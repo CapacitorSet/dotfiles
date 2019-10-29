@@ -20,6 +20,10 @@ unclutter &
 feh --bg-fill ~/dotfiles/Torino.jpg
 # Dunst (notification manager)
 # dunst -conf ~/dotfiles/dunstrc &
+# Auto-mount
+udiskie &
+# NetworkManager tray icon
+nm-applet &
 
 setxkbmap it
 numlockx on
