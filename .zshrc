@@ -3,6 +3,7 @@ export GOROOT=/usr/lib/go
 export GOPATH=~/software/gopath
 export TERMINAL=qterminal
 export EDITOR=nano
+export CDPATH=.:/c:/s
 
 alias dc='docker-compose'
 alias dx='docker exec'
@@ -25,11 +26,18 @@ alias -s git='git clone'
 alias S='trizen -S'
 alias Syu='trizen -Syu'
 alias Rns='trizen -Rns'
+alias rm='rm -v'
+alias mv='mv -v'
+alias gs='git status'
+alias gd='git diff'
+alias gc='git checkout'
+alias gr='git restore'
 
+# Named dirs on the client
+hash -d mount=/run/media/$USER/
 hash -d nginx=/etc/nginx/sites-enabled/
 hash -d logs=/var/log/
-
-eval $(ssh-agent -s) | grep -v 'Agent pid'
+hash -d docker=/docker/$USER/
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
