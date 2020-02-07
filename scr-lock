@@ -1,0 +1,30 @@
+#!/bin/bash
+
+lock() {
+	letterEnteredColor=d23c3dff
+	letterRemovedColor=d23c3dff
+	passwordCorrect=00000000
+	passwordIncorrect=d23c3dff
+	background=00000000
+	foreground=ffffffff
+		# --clock --date-align 1 --datestr $(xdotool getwindowfocus getwindowname) \
+	i3lock \
+		-t -i /tmp/screen.png \
+		--timepos="x+82:h-70" --timestr="%H:%M" \
+		--datepos="x+43:h-45" \
+		--clock --date-align 1 --datestr "Enter password to unlock" \
+		--insidecolor=$background --ringcolor=$foreground --line-uses-inside \
+		--keyhlcolor=$letterEnteredColor --bshlcolor=$letterRemovedColor --separatorcolor=$background \
+		--insidevercolor=$passwordCorrect --insidewrongcolor=$passwordIncorrect \
+		--ringvercolor=$foreground --ringwrongcolor=$foreground --indpos="x+280:h-70" \
+		--radius=20 --ring-width=4 --veriftext="" --wrongtext="" \
+		--verifcolor="$foreground" --timecolor="$foreground" --datecolor="$foreground" \
+	--noinputtext="" --force-clock $lockargs
+}
+
+scrot /tmp/screen-orig.png
+#mogrify -scale 10% -blur 0x2.5 -resize 1000% /tmp/screen.png
+ffmpeg -loglevel quiet -y -i /tmp/screen-orig.png -vf "scale=iw/2:-1, gblur=10, scale=2*iw:-1" /tmp/screen.png
+#ffmpeg -y -i /tmp/screen-orig.png -vf "scale=iw/2:-1, boxblur=5:1, scale=2*iw:-1" /tmp/screen.png
+lock
+rm /tmp/screen-orig.png /tmp/screen.png

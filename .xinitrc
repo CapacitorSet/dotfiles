@@ -17,7 +17,9 @@ setxkbmap xy
 unclutter &
 # Set wallpaper
 # feh --bg-fill ~/dotfiles/wallpaper-1366x768.jpg
-feh --bg-fill ~/dotfiles/Torino.jpg
+# feh --bg-fill ~/dotfiles/Torino.jpg
+# feh --bg-fill ~/dotfiles/gagarin.jpg
+feh --bg-fill ~/dotfiles/D1VAtWX.jpg
 # Dunst (notification manager)
 # dunst -conf ~/dotfiles/dunstrc &
 # Auto-mount

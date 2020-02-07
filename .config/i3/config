@@ -2,7 +2,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 # This is not in .xinitrc, because it requires i3 to be started first.
-exec polybar -c ~/dotfiles/polybar.conf top &
+# exec polybar -c ~/dotfiles/polybar.conf top &
+exec ~/dotfiles/launch_polybar.sh &
 
 set $mod Mod4
 
@@ -36,6 +37,8 @@ bindsym $mod+d exec "rofi -show run -font 'Fira Sans 13'"
 bindsym $mod+a exec xfce4-appfinder
 # start rofi window switcher
 bindsym $mod+w exec "rofi -show window -font 'Fira Sans 13'"
+# start qtfm
+bindsym $mod+Shift+e exec qtfm
 
 # move focus
 bindsym $mod+Left focus left
@@ -53,13 +56,12 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 
-#lock
+# Lock
 bindsym $mod+l exec ~/dotfiles/scr-lock
 
-# split in horizontal orientation
+# split horizontal
 bindsym $mod+h split h
-
-# split in vertical orientation
+# split vertical
 bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
@@ -79,14 +81,11 @@ bindsym $mod+plus scratchpad show
 
 # screenshot
 bindsym Print exec scrot
+# bindsym $mod+Print exec gnome-screenshot -i
+bindsym $mod+Print exec flameshot gui
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
-
-# Firefox
-bindsym $mod+Shift+f exec firefox --new-window
-# YouTube
-bindsym $mod+Shift+y exec firefox --new-window https://youtube.com/
 
 # focus the parent container
 bindsym $mod+p focus parent
@@ -123,12 +122,15 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 bindsym $mod+r mode "resize"
 
-#gaps inner 5px
-#gaps outer 5px
+for_window [class=".*"] border pixel 1
+smart_gaps on
+hide_edge_borders smart_no_gaps
+gaps inner 15
+# gaps outer 5
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -157,7 +159,7 @@ new_window pixel 0
 # default colors, but focused has yellow bg+borders
 # class                 border  backgr. text    indicator child_border
 client.focused          #FFEA00 #FFEA00 #000000 #2e9ef4   #FFEA00
-client.focused_inactive #CCBB00 #CCBB00 #000000 #484e50   #CCBB00
+client.focused_inactive #000000 #CCBB00 #000000 #484e50   #000000
 client.unfocused        #000000 #000000 #FFFFFF #292d2e   #000000
 client.urgent           #F44336 #F44336 #ffffff #900000   #F44336
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c

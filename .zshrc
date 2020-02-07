@@ -5,12 +5,6 @@ export TERMINAL=qterminal
 export EDITOR=nano
 export CDPATH=.:/c:/s
 
-alias dc='docker-compose'
-alias dx='docker exec'
-alias lh='ls -lh'
-alias cpwd='pwd | clipcopy'
-alias zsrc='source ~/.zshrc'
-
 alias -s txt=cat
 alias -s md=cat
 alias -s c=subl
@@ -28,10 +22,18 @@ alias Syu='trizen -Syu'
 alias Rns='trizen -Rns'
 alias rm='rm -v'
 alias mv='mv -v'
+alias killall='killall -v'
 alias gs='git status'
 alias gd='git diff'
 alias gc='git checkout'
 alias gr='git restore'
+alias cal='cal -m'
+alias dc='docker-compose'
+alias dx='docker exec'
+alias lh='ls -lh'
+alias yeet=rm
+alias cpwd='pwd | clipcopy'
+alias zsrc='source ~/.zshrc'
 
 # Named dirs on the client
 hash -d mount=/run/media/$USER/
@@ -90,7 +92,7 @@ export FZF_BASE=/usr/share/fzf
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(copybuffer colored-man-pages fzf command-not-found npm sudo)
+plugins=(copybuffer colored-man-pages fzf command-not-found npm sudo kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
