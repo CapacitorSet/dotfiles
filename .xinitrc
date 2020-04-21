@@ -14,7 +14,7 @@ thunderbird &
 # Set custom keyboard layout
 setxkbmap xy
 # Hide the mouse
-unclutter &
+unclutter --timeout 1 --ignore-scrolling &
 # Set wallpaper
 # feh --bg-fill ~/dotfiles/wallpaper-1366x768.jpg
 # feh --bg-fill ~/dotfiles/Torino.jpg
@@ -22,6 +22,7 @@ unclutter &
 feh --bg-fill ~/dotfiles/D1VAtWX.jpg
 # Dunst (notification manager)
 # dunst -conf ~/dotfiles/dunstrc &
+systemctl --user start xfce4-notifyd &
 # Auto-mount
 udiskie &
 # NetworkManager tray icon

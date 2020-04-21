@@ -9,6 +9,7 @@ alias -s txt=cat
 alias -s md=cat
 alias -s c=subl
 alias -s h=subl
+alias -s py=python
 alias -s cpp=subl
 alias -s hpp=subl
 alias -s js=code
@@ -17,15 +18,30 @@ alias -s css=code
 alias -s html=firefox-nightly
 alias -s git='git clone'
 
-alias S='trizen -S'
-alias Syu='trizen -Syu'
-alias Rns='trizen -Rns'
+if [[ "$HOST" == "vostok1" ]]
+then
+	alias S='trizen -S'
+	alias Syu='trizen -Syu'
+	alias Rns='trizen -Rns'
+elif [[ "$HOST" == "ded1" ]] || [[ "$HOST" == "ded2" ]]
+then
+	alias S='sudo apt install'
+	alias Syu='sudo apt update'
+	alias Rns='sudo apt remove --purge'
+fi
+alias mkdir='mkdir -v'
 alias rm='rm -v'
 alias mv='mv -v'
+alias cp='cp -v'
+alias chown='chown -v'
+alias chmod='chmod -v'
 alias killall='killall -v'
+alias ga='git add'
 alias gs='git status'
 alias gd='git diff'
-alias gc='git checkout'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gch='git checkout'
 alias gr='git restore'
 alias cal='cal -m'
 alias dc='docker-compose'
@@ -87,12 +103,20 @@ COMPLETION_WAITING_DOTS="true"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# fzf config
 export FZF_BASE=/usr/share/fzf
+# bgnotify config
+bgnotify_threshold=4
+function bgnotify_formatted {
+  ## $1=exit_status, $2=command, $3=elapsed_time
+  [ $1 -eq 0 ] && title="Success" || title="Exit status $1"
+  bgnotify "$title ($3 s)" "$2";
+}
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(copybuffer colored-man-pages fzf command-not-found npm sudo kubectl)
+plugins=(bgnotify copybuffer colored-man-pages docker docker-compose fancy-ctrl-z fzf command-not-found mosh npm ripgrep sudo) # kubectl
 
 source $ZSH/oh-my-zsh.sh
 
