@@ -29,6 +29,9 @@ then
 	alias Syu='sudo apt update'
 	alias Rns='sudo apt remove --purge'
 fi
+# Required to make aliases work with sudo
+alias sudo='sudo '
+alias watch='watch '
 alias mkdir='mkdir -v'
 alias rm='rm -v'
 alias mv='mv -v'
@@ -116,7 +119,7 @@ function bgnotify_formatted {
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bgnotify copybuffer colored-man-pages docker docker-compose fancy-ctrl-z fzf command-not-found mosh npm ripgrep sudo) # kubectl
+plugins=(bgnotify copybuffer colored-man-pages docker docker-compose fancy-ctrl-z fzf command-not-found mosh npm ripgrep sudo kubectl)
 
 source $ZSH/oh-my-zsh.sh
 

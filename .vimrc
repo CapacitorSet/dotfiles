@@ -4,7 +4,7 @@ syntax on
 set encoding=utf-8
 set clipboard=unnamedplus
 set autoread
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-nmap . :
+" inoremap ( ()<left>
+" inoremap [ []<left>
+" inoremap { {}<left>
+" nmap . :
