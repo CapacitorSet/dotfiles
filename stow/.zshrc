@@ -1,3 +1,4 @@
+export LANG=en_US.utf8
 export TZ=:/etc/localtime
 export GOROOT=/usr/lib/go
 export GOPATH=~/software/gopath
@@ -18,13 +19,11 @@ alias -s css=code
 alias -s html=firefox-nightly
 alias -s git='git clone'
 
-if [[ "$HOST" == "vostok1" ]]
-then
+if test -f /usr/bin/trizen; then
 	alias S='trizen -S'
 	alias Syu='trizen -Syu'
 	alias Rns='trizen -Rns'
-elif [[ "$HOST" == "ded1" ]] || [[ "$HOST" == "ded2" ]]
-then
+elif test -f /usr/bin/apt; then
 	alias S='sudo apt install'
 	alias Syu='sudo apt update'
 	alias Rns='sudo apt remove --purge'
@@ -151,3 +150,5 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
