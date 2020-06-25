@@ -27,6 +27,7 @@ systemctl --user start xfce4-notifyd &
 udiskie &
 # NetworkManager tray icon
 nm-applet &
+redshift-gtk &
 
 setxkbmap it
 numlockx on
