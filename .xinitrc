@@ -7,10 +7,14 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 [[ -f ~/.Xresources ]] && xrdb -merge -I$HOME ~/.Xresources
 
+# export MOZ_X11_EGL=1
+
 # Startup stuff
+/usr/lib/xfce4/notifyd/xfce4-notifyd &
 firefox-nightly &
 telegram-desktop &
 thunderbird &
+/usr/lib/kdeconnectd &
 # Set custom keyboard layout
 setxkbmap xy
 # Hide the mouse
@@ -22,12 +26,14 @@ unclutter --timeout 1 --ignore-scrolling &
 feh --bg-fill ~/dotfiles/D1VAtWX.jpg
 # Dunst (notification manager)
 # dunst -conf ~/dotfiles/dunstrc &
-systemctl --user start xfce4-notifyd &
+# systemctl --user start xfce4-notifyd &
 # Auto-mount
 udiskie &
 # NetworkManager tray icon
 nm-applet &
-redshift-gtk &
+
+eval $(ssh-agent)
+export SSH_AUTH_SOCK
 
 setxkbmap it
 numlockx on

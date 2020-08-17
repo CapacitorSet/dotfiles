@@ -52,12 +52,28 @@ alias lh='ls -lh'
 alias yeet=rm
 alias cpwd='pwd | clipcopy'
 alias zsrc='source ~/.zshrc'
+alias mpv="mpv --save-position-on-quit --ytdl-format='bestvideo[height<=?720][fps<=?30][vcodec!=?vp9]+bestaudio/best'"
+alias kde="kdeconnect-cli -d 5ab65a9a67e521a0"
+alias sum="awk '{s+=\$1}END{print s}'"
 
 # Named dirs on the client
 hash -d mount=/run/media/$USER/
 hash -d nginx=/etc/nginx/sites-enabled/
 hash -d logs=/var/log/
 hash -d docker=/docker/$USER/
+
+if [ -f ~/.ssh/agent.env ] ; then
+    . ~/.ssh/agent.env > /dev/null
+    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
+        echo "Stale agent file found. Spawning a new agent. "
+        eval `ssh-agent | tee ~/.ssh/agent.env`
+        ssh-add
+    fi
+else
+    echo "Starting ssh-agent"
+    eval `ssh-agent | tee ~/.ssh/agent.env`
+    ssh-add
+fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
