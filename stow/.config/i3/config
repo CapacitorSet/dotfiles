@@ -88,6 +88,7 @@ bindsym $mod+plus scratchpad show
 bindsym Print exec scrot
 # bindsym $mod+Print exec gnome-screenshot -i
 bindsym $mod+Print exec flameshot gui
+# bindsym $mod+Print exec spectacle --region
 
 # change focus between tiling / floating windows
 # bindsym $mod+space focus mode_toggle
@@ -183,5 +184,5 @@ bindsym XF86AudioNext exec --no-startup-id mpc next
 
 
 # Brightness
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 2
+bindsym XF86MonBrightnessDown exec light -U 2

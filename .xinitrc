@@ -13,7 +13,7 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 /usr/lib/xfce4/notifyd/xfce4-notifyd &
 firefox-nightly &
 telegram-desktop &
-thunderbird &
+sh -c 'LANG=it_IT.utf8 thunderbird' & # For Italian date format
 /usr/lib/kdeconnectd &
 # Set custom keyboard layout
 setxkbmap xy
@@ -31,6 +31,8 @@ feh --bg-fill ~/dotfiles/D1VAtWX.jpg
 udiskie &
 # NetworkManager tray icon
 nm-applet &
+redshift -l 45.517:9.192 &
+stretchly &
 
 eval $(ssh-agent)
 export SSH_AUTH_SOCK

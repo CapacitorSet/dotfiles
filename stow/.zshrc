@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 export LANG=en_US.utf8
 export TZ=:/etc/localtime
 export GOROOT=/usr/lib/go
@@ -31,6 +32,14 @@ fi
 # Required to make aliases work with sudo
 alias sudo='sudo '
 alias watch='watch '
+alias q='_zshrc_q '
+_zshrc_q() {
+    "$@" &
+    disown
+    exit
+}
+alias c='cd /c'
+alias s='cd /s'
 alias mkdir='mkdir -v'
 alias rm='rm -v'
 alias mv='mv -v'
@@ -53,7 +62,7 @@ alias yeet=rm
 alias cpwd='pwd | clipcopy'
 alias zsrc='source ~/.zshrc'
 alias mpv="mpv --save-position-on-quit --ytdl-format='bestvideo[height<=?720][fps<=?30][vcodec!=?vp9]+bestaudio/best'"
-alias kde="kdeconnect-cli -d 5ab65a9a67e521a0"
+alias kde="kdeconnect-cli -d 723d16dd517898bc"
 alias sum="awk '{s+=\$1}END{print s}'"
 
 # Named dirs on the client
@@ -134,7 +143,7 @@ function bgnotify_formatted {
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bgnotify copybuffer colored-man-pages docker docker-compose fancy-ctrl-z fzf command-not-found mosh npm ripgrep sudo kubectl)
+plugins=(bgnotify copybuffer colored-man-pages docker docker-compose fancy-ctrl-z fzf command-not-found mosh npm ripgrep sudo) # kubectl)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -168,3 +177,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# zprof
