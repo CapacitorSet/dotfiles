@@ -120,7 +120,10 @@ prompt_git() {
 
 # Dir: current working directory
 prompt_dir() {
-  prompt_segment cyan black '%~'
+  prompt_segment green black "$USER@%m"
+  netns=$(ip netns identify $$)
+  [[ -z $netns ]] || prompt_segment white black "$netns"
+  prompt_segment cyan black "%~"
 }
 
 # Status:
@@ -132,8 +135,8 @@ get_status() {
   symbols=()
   [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
   [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘ [%?]"
-  [[ $RETVAL -eq 0 ]] && symbols+="%{%F{green}%}✔"
-  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  # [[ $RETVAL -eq 0 ]] && symbols+="%{%F{green}%}✔"
+  # [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
 
   [[ -n "$symbols" ]] && echo -n " $symbols "
 }
@@ -148,7 +151,7 @@ left_prompt() {
 
 right_prompt() {
   RETVAL=$?
-  get_user
+  # get_user
   get_status
 }
 

@@ -58,6 +58,7 @@ alias cal='cal -m'
 alias dc='docker-compose'
 alias dx='docker exec'
 alias lh='ls -lh'
+alias rgf='rg -F'
 alias yeet=rm
 alias cpwd='pwd | clipcopy'
 alias zsrc='source ~/.zshrc'
