@@ -31,8 +31,10 @@ feh --bg-fill ~/dotfiles/D1VAtWX.jpg
 udiskie &
 # NetworkManager tray icon
 nm-applet &
-redshift -l 45.517:9.192 &
+redshift-gtk -l 45.517:9.192 &
 stretchly &
+flameshot &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 eval $(ssh-agent)
 export SSH_AUTH_SOCK

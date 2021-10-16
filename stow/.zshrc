@@ -2,10 +2,12 @@
 export LANG=en_US.utf8
 export TZ=:/etc/localtime
 export GOROOT=/usr/lib/go
-export GOPATH=~/software/gopath
+export GOPATH=~/go
 export TERMINAL=qterminal
 export EDITOR=nano
 export CDPATH=.:/c:/s
+export ESPIDF=/opt/esp-idf
+source /s/xpress/bin/xpvars.sh
 
 alias -s txt=cat
 alias -s md=cat
@@ -60,30 +62,22 @@ alias dx='docker exec'
 alias lh='ls -lh'
 alias rgf='rg -F'
 alias yeet=rm
+alias st3=subl3
 alias cpwd='pwd | clipcopy'
 alias zsrc='source ~/.zshrc'
 alias mpv="mpv --save-position-on-quit --ytdl-format='bestvideo[height<=?720][fps<=?30][vcodec!=?vp9]+bestaudio/best'"
 alias kde="kdeconnect-cli -d 723d16dd517898bc"
 alias sum="awk '{s+=\$1}END{print s}'"
+alias qmp="q mpv"
+function qmpc {
+	q mpv --fullscreen $(clippaste)
+}
+alias drsync="rsync --dry-run"
 
-# Named dirs on the client
+# Named dirs
 hash -d mount=/run/media/$USER/
-hash -d nginx=/etc/nginx/sites-enabled/
-hash -d logs=/var/log/
-hash -d docker=/docker/$USER/
 
-if [ -f ~/.ssh/agent.env ] ; then
-    . ~/.ssh/agent.env > /dev/null
-    if ! kill -0 $SSH_AGENT_PID > /dev/null 2>&1; then
-        echo "Stale agent file found. Spawning a new agent. "
-        eval `ssh-agent | tee ~/.ssh/agent.env`
-        ssh-add
-    fi
-else
-    echo "Starting ssh-agent"
-    eval `ssh-agent | tee ~/.ssh/agent.env`
-    ssh-add
-fi
+export SSH_AUTH_SOCK="${XDG_RUNTIME_DIR}/ssh-agent.socket"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -144,7 +138,7 @@ function bgnotify_formatted {
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bgnotify copybuffer colored-man-pages docker docker-compose fancy-ctrl-z fzf command-not-found mosh npm ripgrep sudo) # kubectl)
+plugins=(bgnotify copybuffer colored-man-pages docker docker-compose fancy-ctrl-z fzf command-not-found mosh npm ripgrep sudo kubectl)
 
 source $ZSH/oh-my-zsh.sh
 

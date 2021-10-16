@@ -68,8 +68,8 @@ prompt_segment() {
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
     echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-  else
-    echo -n "%{%k%}"
+  #else
+  #  echo -n "%{%k%}"
   fi
   echo -n "%{%f%}"
   CURRENT_BG=''
@@ -146,6 +146,14 @@ left_prompt() {
   RETVAL=$?
   prompt_dir
   prompt_git
+  if [[ $KUBECONFIG == *"cluster1"* ]]; then
+    prompt_segment black cyan "(cluster1)"
+  elif [[ $KUBECONFIG == *"cluster2"* ]]; then
+    prompt_segment black green "(cluster2)"
+  elif [[ $KUBECONFIG == *"broker"* ]]; then
+    prompt_segment black yellow "(broker)"
+  fi
+  CURRENT_BG=''
   prompt_end
 }
 

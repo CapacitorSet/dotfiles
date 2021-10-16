@@ -85,7 +85,7 @@ bindsym $mod+minus move scratchpad
 bindsym $mod+plus scratchpad show
 
 # screenshot
-bindsym Print exec scrot
+bindsym Print exec flameshot gui
 # bindsym $mod+Print exec gnome-screenshot -i
 bindsym $mod+Print exec flameshot gui
 # bindsym $mod+Print exec spectacle --region
