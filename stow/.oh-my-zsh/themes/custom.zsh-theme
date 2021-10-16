@@ -68,8 +68,8 @@ prompt_segment() {
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
     echo -n " %{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
-  #else
-  #  echo -n "%{%k%}"
+  else
+    echo -n "%{%k%}"
   fi
   echo -n "%{%f%}"
   CURRENT_BG=''
