@@ -153,7 +153,6 @@ left_prompt() {
   elif [[ $KUBECONFIG == *"broker"* ]]; then
     prompt_segment black yellow "(broker)"
   fi
-  CURRENT_BG=''
   prompt_end
 }
 
